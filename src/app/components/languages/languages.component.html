@@ -1,0 +1,13 @@
+<div class="section-card animate-fade-in">
+  <h2 class="section-title">
+    <i class="fas fa-language"></i>
+    Languages
+  </h2>
+
+  <div class="language-list">
+    <div *ngFor="let language of languages" class="language-row">
+      <span class="language-name">{{ language.name }}</span>
+      <span class="language-level">{{ language.label }}</span>
+    </div>
+  </div>
+</div>

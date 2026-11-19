@@ -1,0 +1,17 @@
+/* Mobile-first responsive styles */
+
+@media only screen and (max-width: 600px) {
+  .section-card {
+    padding: 1.25rem !important;
+  }
+
+  .cv-toolbar .toolbar-label {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .section-card {
+    padding: 1.5rem !important;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+  <div id="cv-export-root" class="cv-export-root">
+    <app-header></app-header>
+
+    <div class="cv-page container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
+      <div class="cv-grid grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+        <aside class="cv-sidebar lg:col-span-4 space-y-6">
+          <app-contact (downloadPdf)="downloadPdf()"></app-contact>
+          <app-languages></app-languages>
+        </aside>
+
+        <main class="cv-main lg:col-span-8 space-y-6">
+          <app-summary></app-summary>
+          <app-experience></app-experience>
+          <app-education></app-education>
+          <app-skills></app-skills>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed bottom-6 right-6 z-50 no-print">
+    <div class="cv-toolbar flex items-center gap-1 p-1.5 rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-700/80 shadow-lg shadow-slate-900/10">
+      <app-theme-toggle [isDarkMode]="isDarkMode" (toggleTheme)="toggleDarkMode()"></app-theme-toggle>
+      <div class="w-px h-6 bg-slate-200 dark:bg-slate-600 mx-0.5"></div>
+      <app-print-button (printCV)="printCV()"></app-print-button>
+      <button
+        type="button"
+        (click)="downloadPdf()"
+        class="toolbar-btn toolbar-btn-primary"
+        aria-label="Save CV as PDF"
+        title="Save as PDF — choose 'Save as PDF' in the print dialog">
+        <i class="fas fa-file-pdf"></i>
+        <span class="toolbar-label">PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <footer class="mt-4 text-center text-slate-500 dark:text-slate-400 text-sm py-6 no-print">
+    <p>&copy; {{ currentYear }} Elmir Hodzic. All rights reserved.</p>
+  </footer>
+</div>

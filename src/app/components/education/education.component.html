@@ -1,0 +1,23 @@
+<div class="section-card animate-fade-in">
+  <h2 class="section-title">
+    <i class="fas fa-graduation-cap"></i>
+    Education
+  </h2>
+
+  <div class="space-y-5">
+    <div *ngFor="let item of educationItems; let i = index"
+         class="education-entry animate-slide-in"
+         [style.animation-delay]="i * 0.1 + 's'">
+
+      <div class="education-header">
+        <h3 class="education-degree">{{ item.degree }}</h3>
+        <span class="education-period">{{ item.period }}</span>
+      </div>
+
+      <p class="education-institution">{{ item.institution }}</p>
+      <p class="education-description">{{ item.description }}</p>
+
+      <div *ngIf="i < educationItems.length - 1" class="education-divider"></div>
+    </div>
+  </div>
+</div>

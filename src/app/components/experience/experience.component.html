@@ -1,0 +1,41 @@
+<div class="section-card animate-fade-in">
+  <h2 class="section-title">
+    <i class="fas fa-briefcase"></i>
+    Professional Experience
+  </h2>
+
+  <div class="timeline">
+    <div *ngFor="let exp of experiences; let i = index"
+         class="timeline-item animate-slide-in"
+         [class.hidden]="i >= visibleExperiences"
+         [class.no-print]="exp.hideOnPrint"
+         [style.animation-delay]="i * 0.1 + 's'">
+
+      <div class="experience-entry">
+        <div class="experience-header">
+          <h3 class="experience-title">{{ exp.title }}</h3>
+          <span class="experience-period">{{ exp.period }}</span>
+        </div>
+
+        <div class="experience-meta">
+          <span class="font-medium">{{ exp.company }}</span>
+          <span class="meta-separator">•</span>
+          <span>{{ exp.location }}</span>
+        </div>
+
+        <ul class="experience-list">
+          <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 text-center no-print" *ngIf="experiences.length > 3">
+    <button type="button"
+            (click)="toggleShowAll()"
+            class="btn-outline text-sm py-2 px-4">
+      <i class="fas mr-1" [class.fa-chevron-down]="!showAllExperiences" [class.fa-chevron-up]="showAllExperiences"></i>
+      {{ showAllExperiences ? 'Show Less' : 'Show More Experience' }}
+    </button>
+  </div>
+</div>

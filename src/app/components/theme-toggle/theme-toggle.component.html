@@ -1,0 +1,9 @@
+<button
+  type="button"
+  (click)="onToggle()"
+  class="toolbar-btn"
+  aria-label="Toggle dark mode"
+  [title]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+  <i class="fas" [class.fa-moon]="!isDarkMode" [class.fa-sun]="isDarkMode"></i>
+  <span class="toolbar-label">{{ isDarkMode ? 'Light' : 'Dark' }}</span>
+</button>

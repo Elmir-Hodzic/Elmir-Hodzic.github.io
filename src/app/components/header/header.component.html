@@ -1,0 +1,38 @@
+<header class="cv-header w-full animate-fade-in">
+  <div class="cv-header-accent"></div>
+  <div class="container mx-auto px-4 sm:px-6 py-8 md:py-10 max-w-6xl">
+    <div class="flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-8">
+      <div class="profile-image-wrapper">
+        <img
+          [src]="profileImage"
+          alt="Elmir Hodzic"
+          class="profile-image"
+          onerror="this.src='https://ui-avatars.com/api/?name=Elmir+Hodzic&background=1B3A5F&color=fff&size=256&bold=true'"
+        />
+      </div>
+
+      <div class="text-center md:text-left flex-1 header-copy">
+        <p class="header-eyebrow no-print">
+          Curriculum Vitae
+        </p>
+        <h1 class="header-name">
+          {{ name }}
+        </h1>
+        <p class="header-title">
+          {{ title }}
+        </p>
+        <p class="header-tagline no-print">
+          Luxoft engineer embedded at Apple, previously BMW Group — building ML platforms, RAG, and agentic AI with 9+ years across cloud, automotive, and fintech.
+        </p>
+
+        <!-- Compact contact strip for PDF / print -->
+        <div class="print-contact-strip">
+          <span *ngFor="let item of printContacts; let last = last" class="print-contact-item">
+            <a [href]="item.link">{{ item.value }}</a>
+            <span class="print-contact-sep" *ngIf="!last">·</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

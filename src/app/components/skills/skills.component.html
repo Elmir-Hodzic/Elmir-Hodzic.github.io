@@ -1,0 +1,17 @@
+<div class="section-card animate-fade-in">
+  <h2 class="section-title">
+    <i class="fas fa-code"></i>
+    Core Competencies
+  </h2>
+
+  <div class="yoe-grid">
+    <div *ngFor="let group of competencyGroups" class="yoe-box">
+      <h3 class="yoe-box-title">{{ group.label }}</h3>
+      <div class="yoe-tags">
+        <span *ngFor="let skill of group.skills" class="yoe-tag">
+          {{ skill }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

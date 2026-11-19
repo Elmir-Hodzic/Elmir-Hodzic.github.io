@@ -1,0 +1,36 @@
+<div class="section-card animate-fade-in">
+  <h2 class="section-title">
+    <i class="fas fa-address-card"></i>
+    Contact
+  </h2>
+
+  <div class="space-y-3">
+    <div *ngFor="let item of contactInfo" class="contact-item group">
+      <div class="contact-icon">
+        <i [class]="item.icon"></i>
+      </div>
+
+      <div class="min-w-0">
+        <p class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          {{ item.label }}
+        </p>
+        <a [href]="item.link" class="contact-link">
+          {{ item.value }}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 no-print">
+    <button
+      type="button"
+      (click)="onDownloadPdf()"
+      class="btn-primary w-full flex items-center justify-center gap-2">
+      <i class="fas fa-file-pdf"></i>
+      Save as PDF
+    </button>
+    <p class="text-xs text-slate-500 dark:text-slate-400 text-center mt-2">
+      Opens print dialog — choose "Save as PDF"
+    </p>
+  </div>
+</div>

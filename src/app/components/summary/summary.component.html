@@ -1,0 +1,22 @@
+<div class="section-card animate-fade-in">
+  <h2 class="section-title">
+    <i class="fas fa-user-circle"></i>
+    Professional Summary
+  </h2>
+
+  <p class="summary-text">
+    {{ summary }}
+  </p>
+
+  <div class="highlights-grid no-print">
+    <div *ngFor="let highlight of highlights" class="highlight-card">
+      <div class="highlight-icon">
+        <i [class]="highlight.icon"></i>
+      </div>
+      <div>
+        <h3 class="highlight-title">{{ highlight.title }}</h3>
+        <p class="highlight-description">{{ highlight.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
